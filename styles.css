@@ -10,8 +10,8 @@ body {
 .header {
   padding: 70px;
   text-align: center;
-  background-image: "bannerheader.jpg";
-  background-repeat: round;
+  background-color: black;
+  color: white
 }
 
 h4 {
