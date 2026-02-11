@@ -24,7 +24,7 @@ h4 {
   justify-content: center;
 }
 
-/* Style the navigation bar links */
+/* Navigation bar links */
 .navbar a {
   color: white;
   padding: 14px 20px;
@@ -59,7 +59,7 @@ h4 {
 .card {
   width: 18rem;
 }
-/* Fake image, just for this example */
+/* Fake image */
 .imageplaceholder {
   background-color: #727272;
   width: 100%;
@@ -76,4 +76,29 @@ h4 {
   .row, .navbar {   
     flex-direction: column;
   }
+}
+
+.mac-wrapper {
+  position: relative; /* The anchor for everything else */
+  width: 600px; 
+}
+
+.slot-gate {
+  position: absolute;
+  /* Coordinates: Adjust these to match the black slot in your Mac vector */
+  top: 72%; 
+  left: 35%;
+  width: 200px;
+  height: 20px;
+  
+  overflow: hidden; /* Clipping Mask */
+  perspective: 1000px; /* 3D perspective */
+  z-index: 5;
+}
+
+.floppy-disk {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* Start the floppy outside the slot-gate and drag it in */
 }
