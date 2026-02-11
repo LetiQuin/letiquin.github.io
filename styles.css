@@ -77,28 +77,34 @@ h4 {
     flex-direction: column;
   }
 }
-
-.mac-wrapper {
-  position: relative; /* The anchor for everything else */
-  width: 600px; 
+/* style.css */
+.mac-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
 }
 
 .slot-gate {
   position: absolute;
-  /* Coordinates: Adjust these to match the black slot in your Mac vector */
-  top: 72%; 
+  top: 72%; /* Adjust to match your Mac's slot position */
   left: 35%;
-  width: 200px;
-  height: 20px;
-  
-  overflow: hidden; /* Clipping Mask */
-  perspective: 1000px; /* 3D perspective */
-  z-index: 5;
+  width: 180px; 
+  height: 40px;
+  overflow: hidden; /* This acts as the Clipping Mask */
+  perspective: 1000px; /* This creates the 3D space */
 }
 
 .floppy-disk {
-  position: absolute;
-  top: 0;
-  left: 0;
-  /* Start the floppy outside the slot-gate and drag it in */
+  width: 100%;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: grab;
+}
+
+/* Inserted State Logic */
+.floppy-disk.inserted {
+  pointer-events: none; /* change to allow user to eject floppy */
+  transform: 
+    translate3d(0, -100%, -400px) /* Moves UP and BACK */
+    rotateX(35deg)               /* Tilts the perspective */
+    scale(0.8);                  /* Shrinks slightly */
 }
